@@ -1,10 +1,12 @@
+// Non-Preemptive Shortest Job First (SJF) Algorithm
+
 #include <iostream>
 #include <algorithm>
 #include <iomanip>
 #include <string.h>
 using namespace std;
-struct process
-{
+
+struct process {
     int pid;
     int arrival_time;
     int burst_time;
@@ -14,8 +16,8 @@ struct process
     int waiting_time;
     int response_time;
 };
-int main()
-{
+
+int main() {
     int n;
     struct process p[100];
     float avg_turnaround_time;
@@ -23,18 +25,18 @@ int main()
     float avg_response_time;
     float cpu_utilisation;
     int total_turnaround_time = 0;
-
     int total_waiting_time = 0;
     int total_response_time = 0;
     int total_idle_time = 0;
     float throughput;
     int is_completed[100];
+
     memset(is_completed, 0, sizeof(is_completed));
     cout << setprecision(2) << fixed;
     cout << "Enter the number of processes: ";
     cin >> n;
-    for (int i = 0; i < n; i++)
-    {
+
+    for (int i = 0; i < n; i++) {
         cout << "Enter arrival time of process " << i + 1 << ": ";
         cin >> p[i].arrival_time;
         cout << "Enter burst time of process " << i + 1 << ": ";
@@ -42,12 +44,11 @@ int main()
         p[i].pid = i + 1;
         cout << endl;
     }
+
     int current_time = 0;
     int completed = 0;
     int prev = 0;
-    while (completed != n)
-    {
-
+    while (completed != n){
         int idx = -1;
         int mn = 10000000;
         for (int i = 0; i < n; i++)
@@ -131,9 +132,9 @@ int main()
     cout << "CPU Utilization = " << cpu_utilisation << "%" << endl;
     cout << "Throughput = " << throughput << " process/unit time" << endl;
 }
+
+
 /*
-
-
 AT - Arrival Time of the process
 BT - Burst time of the process
 ST - Start time of the process
