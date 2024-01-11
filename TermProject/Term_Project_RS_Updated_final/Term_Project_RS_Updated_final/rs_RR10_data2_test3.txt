@@ -1,0 +1,8 @@
+Finished bursts:
+BurstID	CPU_ID	Arrival_Time	Finish_Time	Turnaround_Time
+4	0	3.00	0.0012	-2.9988
+3	3	2.00	0.0049	-1.9951
+2	2	1.00	0.0055	-0.9945
+6	2	5.00	0.0066	-4.9934
+1	1	0.00	0.0089	0.0089
+5	1	4.00	0.0109	-3.9891
